@@ -14,13 +14,15 @@ colorscheme koehler
 if has("gui_running")
       " GUI is running or is about to start.
       "   " Maximize gvim window.
-    set lines=50 columns=150
+    set lines=40 columns=120
     colorscheme Mustang_Vim_Colorscheme_by_hcalves
     " remove toolbar, menubar and right scrollbar
     set guioptions-=T
     set guioptions-=m
     set guioptions-=r
 endif
+
+set laststatus=2
 
 
 set tabstop=4
@@ -42,8 +44,15 @@ set hlsearch
 set incsearch
 set showcmd
 
-set list                        " show tabs and spaces at end of line:
-set listchars=tab:>-,trail:.,extends:>
+if version >= 700
+    au insertenter * hi statusline ctermfg=235 ctermbg=2
+    au insertleave * hi statusline ctermbg=240 ctermfg=12
+endif
+
+set list
+
+" show tabs and spaces at end of line:
+set listchars=tab:»·,trail:·,extends:>
 
 if has("linebreak")
     let &sbr = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
@@ -137,6 +146,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" Allows to go down by visible line, not by line number
 "nnoremap j gj
 "nnoremap k gk
 let mapleader=","
