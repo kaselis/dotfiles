@@ -1,0 +1,8 @@
+--type-add=ini=.ini
+--type-add=jinja=.jinja2
+
+--ignore-dir=develop-eggs
+--ignore-dir=*.egg-info
+--ignore-dir=__pycache__
+--ignore-dir=.eggs
+--ignore-dir=bin
