@@ -45,13 +45,14 @@ set incsearch
 set showcmd
 
 if version >= 700
+    " make a green status line in insert mode
     au insertenter * hi statusline ctermfg=235 ctermbg=2
     au insertleave * hi statusline ctermbg=240 ctermfg=12
 endif
 
+" show whitespace characters
 set list
-
-" show tabs and spaces at end of line:
+" set how to show tabs and spaces at end of line:
 set listchars=tab:»·,trail:·,extends:>
 
 if has("linebreak")
@@ -128,10 +129,6 @@ let g:netrw_list_hide= '.*\.pyc$'
 set hidden
 set title
 
-"show whitespaces
-"set list
-"set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
 " force to use hjkl instead of arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -149,6 +146,8 @@ inoremap <right> <nop>
 " Allows to go down by visible line, not by line number
 "nnoremap j gj
 "nnoremap k gk
+
+" change leader to
 let mapleader=","
 
 " show number of lines relative to current line
