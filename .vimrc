@@ -60,7 +60,7 @@ if has("linebreak")
 endif
 
 autocmd FileType html,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-"autocmd FileType zcml set syntax=xml
+autocmd BufRead *.zcml set syntax=xml
 autocmd FileType jinja2 set syntax=html
 
 
