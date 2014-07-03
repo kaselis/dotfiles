@@ -20,6 +20,9 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=m
     set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
 endif
 
 set laststatus=2
@@ -59,9 +62,10 @@ if has("linebreak")
     let &sbr = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
 endif
 
-autocmd FileType html,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType djangohtml,html,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufRead *.zcml set syntax=xml
 autocmd FileType jinja2 set syntax=html
+autocmd BufRead *.html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 
 function Comment()
@@ -165,3 +169,7 @@ inoremap zz <esc>
 
 " call ack with ,a
 nnoremap <leader>a :Ack 
+
+
+set tags+=tags,.git/**/tags
+set notr
