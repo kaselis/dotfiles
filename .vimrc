@@ -106,10 +106,17 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 "map : to ; in order to save ourselves from pressing shift
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
+"vnoremap ; :
+"vnoremap : ;
+"
+" map W to w
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 
 "highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "match OverLength /\%80v.*/
