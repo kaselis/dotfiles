@@ -65,7 +65,7 @@ endif
 autocmd FileType djangohtml,html,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufRead *.zcml set syntax=xml
 autocmd FileType jinja2 set syntax=html
-autocmd BufRead *.html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd BufRead *.html,*.js setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 
 function Comment()
