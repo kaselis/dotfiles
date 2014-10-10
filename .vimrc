@@ -172,7 +172,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " pressing double zz in insert mode will act as escape button
-inoremap zz <esc>
+"inoremap zz <esc>
 
 " call ack with ,a
 nnoremap <leader>a :Ack 
@@ -180,3 +180,6 @@ nnoremap <leader>a :Ack
 
 set tags+=tags,.git/**/tags
 set notr
+
+" copy to system clipboard also
+set clipboard=unnamedplus
