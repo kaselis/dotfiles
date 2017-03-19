@@ -6,11 +6,15 @@ endif
 
 "filetype off
 "call pathogen#runtime_append_all_bundles()
+"
 execute pathogen#infect()
+
 syntax on
-"filetype on
-filetype indent plugin on
+
+filetype indent plugin on  " load filetype-specific indent files
+
 colorscheme koehler
+
 if has("gui_running")
       " GUI is running or is about to start.
       "   " Maximize gvim window.
@@ -28,24 +32,29 @@ endif
 set laststatus=2
 
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=4       " number of visual spaces per TAB
+set shiftwidth=4    " 
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " put spaces on tab press
+set number          " show line numbers
+set showcmd         " show command in bottom bar
+"set cursorline      " highlight line where cursor is
+set showmatch       " highlight matching [{()}]
 set shiftround
 set smarttab
-set softtabstop=4
 set autoindent
 set nosmartindent
 set nobackup
 set nowritebackup
 set noswapfile
-set expandtab
-set number
 set pastetoggle=<F2>
 set backspace=indent,eol,start
 set ruler
-set hlsearch
-set incsearch
-set showcmd
+set incsearch       " search as chars are enterer
+set hlsearch        " highlight matches
+" turn of search highlight with leader space
+" doesn't look like it works
+nnoremap <leader><space> :nohlsearch<CR>
 
 if version >= 700
     " make a green status line in insert mode
